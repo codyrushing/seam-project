@@ -1,0 +1,35 @@
+@size: 48px;
+@cross-width: @size/12;
+
+.four-by-four {
+  display: inline-block;
+  // transform: rotate(45deg);
+  text-indent: -999rem;
+  margin: @size/8;
+  width: @size;
+  height: @size;
+  border: @cross-width solid @color-primary;
+  position: relative;
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: @color-primary;
+    opacity: 0.5;
+  }
+  &:before {
+    top: 50%;
+    transform: translateY(-@cross-width/2);
+    left: 0;
+    width: 100%;
+    height: @cross-width;
+  }
+  &:after {
+    left: 50%;
+    transform: translateX(-@cross-width/2);
+    top: 0;
+    height: 100%;
+    width: @cross-width;
+  }
+}

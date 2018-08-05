@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{{#if title}}{{title}}{{else}}{{pageTitle}}{{/if}} - {{SITE_TITLE}}</title>
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700|Roboto:500" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="/css/main.css?timestamp={{timestamp}}" />
+    </head>
+    <body class="{{sectionName}}">
+        {{> header }}
+        <main>
+          <h1>{{pageTitle}}</h1>
+          {{{body}}}
+        </main>
+        {{> footer}}
+        {{!-- scripts go here --}}
+        <script type="application/javascript" src="/js/main.js?timestamp={{timestamp}}"></script>
+    </body>
+</html>

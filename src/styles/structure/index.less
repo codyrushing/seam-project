@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  background-image: url(/images/cloth_alike_@2x.png);
+  color: @color-text;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+main {
+  flex-grow: 1;
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+@import 'header.less';
+@import 'footer.less';

@@ -1,0 +1,5 @@
+SITE_TITLE: "Tim and Eric Awesome Show: Great Job"
+VIEWS_PATH: src/views
+PUBLIC_PATH: public
+FORCE_WWW: true
+PORT: 3030
