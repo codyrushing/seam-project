@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 html {
   height: 100%;
 }
@@ -12,7 +8,8 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #eee;
-  background-image: url(/images/cloth_alike_@2x.png);
+  background-image: url(/images/roughcloth_@2x.png);
+  background-size: 320px 320px;
   color: @color-text;
   overflow-x: hidden;
   transition: transform 0.2s ease-in-out;
@@ -38,6 +35,7 @@ main {
   margin-right: auto;
   flex-grow: 1;
   padding: @header-height 1rem 0;
+  background: rgba(255,255,255,0.6);
   img {
     display: block;
     max-width: 100%;

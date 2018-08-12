@@ -4,7 +4,7 @@ header {
   padding: 0.5rem;
   display: flex;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   top: 0;
   width: 100%;
   left: 0;
@@ -24,6 +24,7 @@ header {
   a.nav-toggle {
     font-size: 1.8rem;
     text-decoration: none;
+    padding-right: 0.5rem;
     color: #000;
     cursor: pointer;
     .close {
@@ -43,10 +44,10 @@ header {
         display: block;
         color: @color-light;
         text-decoration: none;
-        padding: 0.5rem 1rem;
+        padding: 1rem 1rem;
         transition: background 0.1s ease-in-out;
+        border-top: 1px solid @color-light;
         & + a {
-          border-top: 1px solid @color-light;
         }
         &.active,
         &:hover {
@@ -57,7 +58,7 @@ header {
 
     .social {
       display: flex;
-      padding-top: 1rem;
+      padding-top: 3rem;
       justify-content: center;
       flex-wrap: wrap;
       svg {
@@ -74,15 +75,9 @@ header {
 
       .support {
         display: block;
-        font-size: 0.9rem;
-        flex-basis: 100%;
-        text-decoration: none;
-        background: @color-primary;
         border: 1px solid @color-light;
-        margin: 1rem;
-        text-align: center;
-        color: @color-light;
-        border-radius: 0.5rem;
+        flex-basis: 100%;
+        margin-top: 1rem;
         &:hover {
           background: @color-secondary;
         }

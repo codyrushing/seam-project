@@ -1,5 +1,6 @@
-SITE_TITLE: "Tim and Eric Awesome Show: Great Job"
+SITE_TITLE: "Seam Project"
 VIEWS_PATH: src/views
 PUBLIC_PATH: public
 FORCE_WWW: true
 PORT: 3031
+GOFUNDME_URL: https://www.gofundme.com/seam-project
