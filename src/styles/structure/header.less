@@ -1,13 +1,94 @@
 header {
+  background: #fff;
+  border-bottom: 1px dashed @color-text;
+  padding: 0.5rem;
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  height: @header-height;
   .home-link {
     display: block;
     text-indent: -999em;
-    background-image: url('/images/logo-3.svg');
+    background-image: url('/images/seam-main-text-header.png');
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1rem;
+    width: 150px;
+    align-self: stretch;
+  }
+  a.nav-toggle {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    .close {
+      font-size: 2.4rem;
+      display: none;
+    }
+  }
+  .main-nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    right: -200px;
+    background: @color-text;
+    .site-nav {
+      a {
+        display: block;
+        color: @color-light;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: background 0.1s ease-in-out;
+        & + a {
+          border-top: 1px solid @color-light;
+        }
+        &.active,
+        &:hover {
+          background: @color-secondary;
+        }
+      }
+    }
+
+    .social {
+      display: flex;
+      padding-top: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      svg {
+        height: 2rem;
+        fill: @color-light;
+        transition: fill 0.1s ease-in-out;
+      }
+      a {
+        padding: 0.5rem;
+      }
+      a:hover svg {
+        fill: @color-secondary;
+      }
+
+      .support {
+        display: block;
+        font-size: 0.9rem;
+        flex-basis: 100%;
+        text-decoration: none;
+        background: @color-primary;
+        border: 1px solid @color-light;
+        margin: 1rem;
+        text-align: center;
+        color: @color-light;
+        border-radius: 0.5rem;
+        &:hover {
+          background: @color-secondary;
+        }
+      }
+
+    }
+
   }
 }

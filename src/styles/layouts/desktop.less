@@ -1,0 +1,59 @@
+@media all and (min-width: @desktop) {
+  header {
+    .main-nav {
+      position: static;
+      background: none;
+      width: auto;
+      display: flex;
+      .site-nav {
+        display: flex;
+        align-items: center;
+        a {
+          color: @color-text;
+          & + a {
+            border: none;
+          }
+          &.active {
+            background: @color-primary;
+            color: @color-light;
+          }
+          &:hover:not(.active) {
+            background: none;
+            color: @color-primary;
+          }
+        }
+      }
+      .social {
+        padding: 0 0 0 0.5rem;
+        align-items: center;
+        border-left: 1px solid @color-text;
+        margin-left: 1rem;
+        a {
+          display: flex;
+          align-items: center;
+          svg {
+            height: 1.3rem;
+            width: auto;
+            opacity: 0.8;
+            fill: @color-text;
+            transition: all 0.1s ease-in-out;
+          }
+          &:hover {
+            svg {
+              opacity: 1;
+              fill: @color-primary;
+            }
+          }
+        }
+        .support {
+          flex-basis: auto;
+          padding: 0.25rem 0.75rem;
+          margin: 0 0 0 0.5rem;
+        }
+      }
+    }
+    .nav-toggle {
+      display: none;
+    }
+  }
+}

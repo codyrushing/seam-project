@@ -47,14 +47,22 @@ pages.forEach(
   page => {
     app.get(
       `/${page.metadata.route || page.route}`,
-      (req, res, next) => res.render(page.template, {
-        ...config,
-        ...req.params,
-        ...sanitizeObject(req.query),
-        ...page.metadata,
-        pages,
-        timestamp
-      })
+      (req, res, next) => {
+        const { redirect } = page.metadata;
+        redirect
+          ? res.redirect(
+            302,
+            redirect
+          )
+          : res.render(page.template, {
+            ...config,
+            ...req.params,
+            ...sanitizeObject(req.query),
+            ...page.metadata,
+            pages,
+            timestamp
+          });
+      }
     );
   }
 );

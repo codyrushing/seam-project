@@ -14,17 +14,70 @@ body {
   background-color: #eee;
   background-image: url(/images/cloth_alike_@2x.png);
   color: @color-text;
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
+  overflow-x: hidden;
+  transition: transform 0.2s ease-in-out;
+  &.menu-open {
+    transform: translate3d(-200px, 0, 0);
+    overflow: hidden;
+    header .nav-toggle {
+      .open {
+        display: none;
+      }
+      .close {
+        font-weight: bold;
+        display: block;
+      }
+    }
+  }
 }
 
 main {
+  width: 95%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   flex-grow: 1;
+  padding: @header-height 1rem 0;
   img {
     display: block;
     max-width: 100%;
+  }
+  figure {
+    margin: 0 auto;
+    display: inline-block;
+    padding: 0.5rem;
+    background: @color-light;
+    box-shadow: 0 0 1px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    max-height: 480px;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    &:after,
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      background: @color-light;
+      z-index: 1;
+    }
+    &:after {
+      bottom: 0;
+      height: 0.5rem;
+      left: 0;
+      right: 0;
+    }
+    &:before {
+      top: 0;
+      height: 0.5rem;
+      left: 0;
+      right: 0;
+    }
+    img {
+      display: inline-block;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-<nav>
+<nav class="site-nav">
   {{#each pages}}
     {{#not metadata.hideInNav}}
       <a href="{{#getPageUrl this}}{{/getPageUrl}}"{{#is ../pageTitle metadata.pageTitle}} class="active"{{/is}}>{{metadata.pageTitle}}</a>

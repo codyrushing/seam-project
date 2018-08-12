@@ -1,5 +1,5 @@
 body {
-  .bodyText();  
+  .bodyText();
 }
 
 h1,
@@ -7,4 +7,56 @@ h2,
 h3,
 h4 {
   .headlineText();
+}
+
+h1 {
+  display: inline-block;
+  position: relative;
+  padding: 0.5rem 1rem 0.5rem 0;
+  color: @color-light;
+  // padding-left: 999rem;
+  // padding-right: 1rem;
+  // transform: translateX(-999rem);
+  // border-bottom: 0.1em solid @color-primary;
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background: @color-primary;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: -999em;
+  }
+}
+
+a {
+  color: @color-secondary;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  margin-top: 0;
+  &:first-child {
+    margin-top: 1rem;
+  }
+}
+
+.highlight {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: @color-primary;
+  color: @color-light;
+  font-size: 0.8em;
+}
+
+main {
+  p,
+  li {
+    line-height: 1.2;
+  }
 }

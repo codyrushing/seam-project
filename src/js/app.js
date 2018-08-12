@@ -7,6 +7,30 @@ export default {
   DOMReady: function(){
     this.hammer = new Hammer(document);
     this.swipeMenu();
+    this.navToggle();
+  },
+  navToggle: function(){
+    document.querySelector('header .nav-toggle').addEventListener(
+      'click',
+      e => {
+        e.preventDefault();
+        e.stopPropagation();
+        window.scrollTo(0,0);
+        document.body.classList.toggle('menu-open');
+      }
+    );
+    document.addEventListener(
+      'click',
+      e => {
+        document.body.classList.remove('menu-open');
+      }
+    );
+    document.querySelector('header .main-nav').addEventListener(
+      'click',
+      e => {
+        e.stopPropagation();
+      }
+    )
   },
   swipeMenu: function(){
     function getStartPosition(e) {

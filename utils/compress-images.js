@@ -17,7 +17,7 @@ const plugins = [
 ];
 
 glob(
-  path.join(src, '/images/**/*.{jpg,gif,png,svg}'),
+  path.join(src, '/images/**/*.{jpg,jpeg,gif,png,svg}'),
   (err, files) => {
     if(err) throw err;
     return Promise.all(

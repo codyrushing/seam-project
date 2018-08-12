@@ -1,6 +1,27 @@
 footer {
+  background: @color-secondary;
+  color: @color-light;
+  padding: 0.5rem;
   font-size: 0.8rem;
-  .four-by-four {
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .social {
+    display: flex;
+    & > div {
+      margin-left: 0.5rem;
+    }
+    a {
+      svg {
+        fill: @color-light;
+        height: 1.2rem;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .support {
+      display: none;
+    }
   }
 }
