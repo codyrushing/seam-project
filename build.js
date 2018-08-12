@@ -23,6 +23,7 @@ const buildProcesses = [
   ...js.map(
     item => `browserify ${item.src} -t babelify | uglifyjs -c > ${item.dest}`
   ),
+  'node ./utils/compress-images.js',
   'npm run custom',
 ]
 .map(
