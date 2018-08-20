@@ -7,6 +7,8 @@ const handler = (err, stdout, stderr) => {
   console.error(stderr);
 }
 
+require('./cleanup-build')();
+
 const devProcesses = [
   'nodemon --ignore src/js --ignore public --ext js,hbs .',
   // compile css initially

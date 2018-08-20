@@ -24,6 +24,12 @@ app.engine('hbs', hbs.engine);
 app.set('views', VIEWS_PATH);
 app.set('view engine', 'hbs');
 
+const getRequestData = req => {
+  return {
+    isLocal: /^localhost/.test(req.hostname)
+  };
+};
+
 if(FORCE_WWW){
   app.use(
     // anything that does not start with www or localhost gets redirected to www
@@ -57,6 +63,7 @@ pages.forEach(
           : res.render(page.template, {
             ...config,
             ...req.params,
+            ...getRequestData(req),
             ...sanitizeObject(req.query),
             ...page.metadata,
             pages,

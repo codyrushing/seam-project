@@ -1,6 +1,11 @@
 const { exec } = require('child_process');
+const fs = require('fs');
 const path = require('path');
+const rimraf = require('rimraf');
 const { css, js, images } = require('./build-config.json');
+
+require('./cleanup-build')();
+
 const handler = (err, stdout, stderr) => {
   console.log(this);
   console.log(stdout);
