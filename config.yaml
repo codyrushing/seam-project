@@ -4,3 +4,4 @@ PUBLIC_PATH: public
 FORCE_WWW: true
 PORT: 3031
 GOFUNDME_URL: https://www.gofundme.com/seam-project
+GOOGLE_ANALYTICS_ACCOUNT_ID: UA-124258828-1

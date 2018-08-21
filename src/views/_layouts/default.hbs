@@ -11,7 +11,7 @@
 
         {{#not isLocal}}
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124258828-1"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{GOOGLE_ANALYTICS_ACCOUNT_ID}}"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -33,5 +33,16 @@
         {{> footer}}
         {{!-- scripts go here --}}
         <script type="application/javascript" src="/js/main.js?timestamp={{timestamp}}"></script>
+
+        <!-- Google Analytics -->
+        {{#not isLocal}}
+        <script>
+          window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+          ga('create', '{{GOOGLE_ANALYTICS_ACCOUNT_ID}}', 'auto');
+          ga('send', 'pageview');
+          </script>
+          <script async src='https://www.google-analytics.com/analytics.js'></script>
+        {{/not}}
+        <!-- End Google Analytics -->
     </body>
 </html>
