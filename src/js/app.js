@@ -49,7 +49,6 @@ export default {
       function(e){
         e.preventDefault();
         const { x } = getStartPosition(e);
-        console.log(x);
       }
     )
   }

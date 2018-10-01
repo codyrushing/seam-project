@@ -10,6 +10,33 @@
       .site-nav {
         display: flex;
         align-items: center;
+        & > ul {
+          display: flex;
+          li {
+            position: relative;
+            &:hover ul {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+          ul {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.1s ease-in-out;
+            background: @color-secondary;
+            width: 100%;
+            position: absolute;
+            left: 1rem;
+            a {
+              color: #fff;
+              padding-left: 0.5rem;
+              &:hover:not(.active) {
+                color: #fff;
+                background: @color-primary;
+              }
+            }
+          }
+        }
         a {
           color: @color-text;
           & + a {

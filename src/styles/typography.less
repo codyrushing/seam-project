@@ -7,6 +7,8 @@ h2,
 h3,
 h4 {
   .headlineText();
+  margin-bottom: 1em;
+  margin-top: 0;
 }
 
 h1 {
@@ -42,6 +44,18 @@ h1 {
   }
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
 a {
   color: @color-secondary;
 }
@@ -61,6 +75,14 @@ li {
   background: @color-primary;
   color: @color-light;
   font-size: 0.8em;
+
+  &[href] {
+    text-decoration: none;
+    &:hover {
+      background: @color-secondary;
+    }
+  }
+
   &.style-2 {
     background: @color-secondary;
   }
@@ -76,9 +98,10 @@ li {
   text-align: center;
 }
 
+button,
 .button {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-decoration: none;
   background: @color-primary;
   margin: 0.5rem;
@@ -99,6 +122,13 @@ li {
       border-color: @color-text;
       background: @color-gray;
     }
+  }
+  &.block {
+    width: 300px;
+    white-space: normal;
+    margin: 0;
+    display: block;
+    max-width: 100%;
   }
 }
 

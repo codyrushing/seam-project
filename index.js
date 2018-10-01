@@ -48,7 +48,8 @@ app.use(
   express.static( path.join(__dirname, PUBLIC_PATH) )
 );
 
-const pages = require('./utils/build-page-tree');
+const { pages, pagesNested } = require('./utils/build-page-tree');
+
 pages.forEach(
   page => {
     app.get(
@@ -66,7 +67,9 @@ pages.forEach(
             ...getRequestData(req),
             ...sanitizeObject(req.query),
             ...page.metadata,
+            currentUrl: req.originalUrl,
             pages,
+            pagesNested,
             timestamp
           });
       }
