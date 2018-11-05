@@ -24,6 +24,25 @@ module.exports = {
       return options.fn(this);
     }
     return null;
-  }
+  },
+  getSectionPages: function(sectionPages, sections, options){
+    sections = sections.split('/');
+    const findBySection = (pages, section) => pages.find(page => page.name === section);
+
+    for(var i=0; i<sections.length; i++){
+      let section = sections[i];
+      console.log(section);
+      console.log(sectionPages);
+      let matchingPages = findBySection(sectionPages, section);
+      if(!matchingPages){
+        break;
+      }
+      sectionPages = matchingPages.subpages || [];
+    }
+    return options.fn(sectionPages);
+  },
+  setVariable: function(varName, varValue, options){
+    options.data.root[varName] = varValue;
+  },
   // add more helpers here if needed
 }

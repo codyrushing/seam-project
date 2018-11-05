@@ -1,4 +1,10 @@
 {{!--
-redirect: /performances/past/south-2018
 pageTitle: Past Shows
 --}}
+  {{#getSectionPages pagesNested 'performances/past'}}
+    <ul class="list">
+      {{#each this}}
+        <li><a href="/{{this.route}}">{{this.metadata.pageTitle}}</a></li>
+      {{/each}}
+    </ul>
+  {{/getSectionPages}}
