@@ -31,8 +31,6 @@ module.exports = {
 
     for(var i=0; i<sections.length; i++){
       let section = sections[i];
-      console.log(section);
-      console.log(sectionPages);
       let matchingPages = findBySection(sectionPages, section);
       if(!matchingPages){
         break;

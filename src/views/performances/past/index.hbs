@@ -1,10 +1,13 @@
 {{!--
 pageTitle: Past Shows
+hideInNav: true
 --}}
   {{#getSectionPages pagesNested 'performances/past'}}
     <ul class="list">
       {{#each this}}
-        <li><a href="/{{this.route}}">{{this.metadata.pageTitle}}</a></li>
+        {{#not this.metadata.hideInNav}}
+          <li><a href="/{{this.route}}">{{this.metadata.pageTitle}}</a></li>
+        {{/not}}
       {{/each}}
     </ul>
   {{/getSectionPages}}
